@@ -42,6 +42,10 @@ class User < ActiveRecord::Base
     return user if user.has_password?(submitted_password)
   end
   
+  def reset_password
+  	self.password = ""
+  	self.password_confirmation = ""
+  end
   
   private
 
